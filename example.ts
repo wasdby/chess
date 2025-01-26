@@ -1,4 +1,8 @@
-import { Clickable, Hoverable, Stylable, Text, Wrap } from "./src/components/atoms"
+import { Clickable } from "./src/components/atoms/Clickable/index.js"
+import { Hoverable } from "./src/components/atoms/Hoverable/index.js"
+import { Stylable } from "./src/components/atoms/Stylable/index.js"
+import { Wrap } from "./src/components/atoms/Wrap/index.js"
+import { Text } from "./src/components/atoms/Text/index.js"
 
 const component = new Clickable(
   new Hoverable(
