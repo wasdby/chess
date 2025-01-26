@@ -1,4 +1,4 @@
-export type Container = HTMLDivElement
+export type Container = HTMLElement
 
 export interface Component {
   /**
