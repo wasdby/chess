@@ -1,4 +1,4 @@
-import { Text } from "../Text/Text.js"
+import { Text } from "../Text/index.js"
 import { Stylable } from "./index.js"
 
 const component = new Stylable(new Text('Hello World!'))

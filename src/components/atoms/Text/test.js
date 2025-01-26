@@ -1,4 +1,4 @@
-import { Text } from "./Text.js"
+import { Text } from "./index.js"
 
 const container = document.getElementById('root')
 const text1 = new Text('Hello Human!')
