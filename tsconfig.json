@@ -3,6 +3,7 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
+    "target": "es2015",
   },
   "include": [
     "**/*.js",
