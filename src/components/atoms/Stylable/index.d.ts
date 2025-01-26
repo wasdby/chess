@@ -9,9 +9,7 @@ import { Component, Container } from "../../component"
  * stylable.classList.remove('style2')
  */
 export class Stylable implements Component {
-  constructor(
-    content: Component,
-  )
+  constructor(content: Component)
   mount(container: Container): void
   unmount(): void
   get classList(): HTMLElement['classList']
