@@ -1,15 +1,18 @@
 export class Stylable {
-  constructor(content) {
+  constructor (content) {
     this.content = content
     this.element = document.createElement('div')
   }
-  mount(container) {
+
+  mount (container) {
     container.appendChild(this.element)
     this.content.mount(this.element)
   }
-  unmount() {
+
+  unmount () {
     this.content.unmount()
     this.element.parentElement.removeChild(this.element)
   }
-  get classList() { return this.element.classList }
+
+  get classList () { return this.element.classList }
 }

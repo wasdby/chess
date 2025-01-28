@@ -1,10 +1,10 @@
-import { Text } from "./index.js"
+import { Text } from './index.js'
 
 const container = document.getElementById('root')
 const text1 = new Text('Hello Human!')
 const text2 = new Text('Hello World!')
 
-async function test() {
+async function test () {
   text1.mount(container)
   await new Promise(r => setTimeout(r, 1000))
   text2.mount(container)
@@ -16,4 +16,3 @@ async function test() {
 }
 
 test()
-

@@ -1,4 +1,4 @@
 export class Nothing {
-  mount() { }
-  unmount() { }
+  mount () { }
+  unmount () { }
 }
