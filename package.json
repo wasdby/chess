@@ -1,6 +1,10 @@
 {
   "name": "not-chess",
-  "scripts": {},
+  "scripts": {
+    "lint:stylelint": "stylelint '**/*.css'",
+    "lint:eslint": "eslint",
+    "lint": "pnpm lint:eslint && pnpm lint:stylelint"
+  },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
     "@html-eslint/eslint-plugin": "^0.33.1",
