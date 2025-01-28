@@ -1,3 +1,3 @@
-import { Raw } from "./index.js";
+import { Raw } from './index.js'
 
-new Raw(`<a href="google.com">Google<a/>`).mount(document.getElementById('root'))
+new Raw('<a href="google.com">Google<a/>').mount(document.getElementById('root'))
