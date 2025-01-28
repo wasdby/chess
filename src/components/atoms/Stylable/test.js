@@ -7,7 +7,7 @@ component.mount(document.getElementById('root'))
 async function test () {
   while (true) {
     component.classList.toggle('red')
-    await new Promise(r => setTimeout(r, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
   }
 }
 

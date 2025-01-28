@@ -6,13 +6,13 @@ const text2 = new Text('Hello World!')
 
 async function test () {
   text1.mount(container)
-  await new Promise(r => setTimeout(r, 1000))
+  await new Promise(resolve => setTimeout(resolve, 1000))
   text2.mount(container)
-  await new Promise(r => setTimeout(r, 1000))
+  await new Promise(resolve => setTimeout(resolve, 1000))
   text1.unmount()
-  await new Promise(r => setTimeout(r, 1000))
+  await new Promise(resolve => setTimeout(resolve, 1000))
   text2.unmount()
-  await new Promise(r => setTimeout(r, 1000))
+  await new Promise(resolve => setTimeout(resolve, 1000))
 }
 
 test()
