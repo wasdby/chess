@@ -1,6 +1,7 @@
 {
   "name": "not-chess",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "lint:stylelint": "stylelint '**/*.css'",
     "lint:eslint": "eslint",
     "lint": "pnpm lint:eslint && pnpm lint:stylelint"
