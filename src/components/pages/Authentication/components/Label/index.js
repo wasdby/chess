@@ -1,19 +1,17 @@
+import { Raw } from '../../../../atoms/Raw/index.js'
+
 export class Label {
   constructor (text) {
-    this.text = text
-    this.element = document.createElement('p')
-    this.element.className = 'pages-label'
-    this.element.innerText = text
+    this.element = new Raw(`<p class="pages-label">
+      ${text}
+    </p>`)
   }
 
   mount (container) {
-    this.container = container
-    container.appendChild(this.element)
+    this.element.mount(container)
   }
 
   unmount () {
-    if (this.container && this.element) {
-      this.container.removeChild(this.element)
-    }
+    this.element.unmount()
   }
 }
