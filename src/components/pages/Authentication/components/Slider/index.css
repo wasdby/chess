@@ -1,0 +1,13 @@
+.pages-slider {
+  position: relative;
+}
+
+.pages-slider-progress {
+  position: absolute;
+  top: 24px;
+  left: 60px;
+  width: 620px;
+  height: 8px;
+  background: linear-gradient(to right, #FF1414, #00FF38);
+  border-radius: 4px;
+}
