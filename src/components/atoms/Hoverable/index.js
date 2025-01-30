@@ -18,6 +18,7 @@ export class Hoverable {
   }
 
   unmount () {
+    this.content.unmount()
     this.element.parentElement.removeChild(this.element)
   }
 }
