@@ -1,0 +1,14 @@
+.pages-hide-button {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+}
+
+.pages-hide-button svg path {
+  fill: #919191;
+}
+
+.pages-hide-button.active svg path {
+  fill: #fff;
+}
