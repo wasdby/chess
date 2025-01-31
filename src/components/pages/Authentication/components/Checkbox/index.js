@@ -1,13 +1,18 @@
 export class Checkbox {
   constructor (options = {}) {
-    this.options = options
     this.element = document.createElement('input')
     this.element.type = 'checkbox'
     this.element.className = 'checkbox'
     this.element.checked = false
 
+    this.onChanged = (value) => {
+      if (options.onChanged) {
+        options.onChanged(value)
+      }
+    }
+
     this.element.addEventListener('change', (event) => {
-      this.handleChange(event.target.checked)
+      this.onChanged(event.target.checked)
     })
   }
 
@@ -16,9 +21,7 @@ export class Checkbox {
   }
 
   unmount () {
-    if (this.element.parentElement) {
-      this.element.parentElement.removeChild(this.element)
-    }
+    this.element.parentElement.removeChild(this.element)
   }
 
   get checked () {
@@ -27,12 +30,6 @@ export class Checkbox {
 
   set checked (value) {
     this.element.checked = value
-    this.handleChange(value)
-  }
-
-  handleChange (value) {
-    if (this.options.onChanged) {
-      this.options.onChanged(value)
-    }
+    this.onChanged(value)
   }
 }
