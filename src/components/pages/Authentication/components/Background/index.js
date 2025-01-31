@@ -1,15 +1,21 @@
-import { Raw } from '../../../../atoms/Raw/index.js'
-
 export class Background {
-  constructor (src) {
-    this.element = new Raw(`<div class='background' style=' background-image: url("${src}")'></div>`)
+  constructor (content) {
+    this.content = content
+    this.container = null
+    this.backgroundElement = null
   }
 
   mount (container) {
-    this.element.mount(container)
+    this.container = container
+    this.backgroundElement = document.createElement('div')
+    this.backgroundElement.className = 'background'
+
+    this.content.mount(this.backgroundElement)
+    container.appendChild(this.backgroundElement)
   }
 
   unmount () {
-    this.element.unmount()
+    this.content.unmount()
+    this.container.removeChild(this.backgroundElement)
   }
 }
