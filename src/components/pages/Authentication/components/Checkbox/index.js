@@ -7,7 +7,6 @@ export class Checkbox {
     this.element.checked = false
 
     this.element.addEventListener('change', (event) => {
-      // @ts-ignore
       this.handleChange(event.target.checked)
     })
   }
