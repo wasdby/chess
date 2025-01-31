@@ -2,8 +2,10 @@ import { Slider } from './index.js'
 
 const root = document.getElementById('root')
 
-const net = {
-  getPercent: () => Math.random() * 100
-}
-
-new Slider(net).mount(root)
+const slider = new Slider()
+slider.mount(root)
+let i = 1
+const intv = setInterval(() => {
+  slider.progress = i++
+  if (i > 100) clearInterval(intv)
+}, 100)
