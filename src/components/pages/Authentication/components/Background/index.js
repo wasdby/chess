@@ -1,21 +1,23 @@
+import { Wrap } from '../../../../atoms/Wrap/index.js'
+
 export class Background {
   constructor (content) {
     this.content = content
-    this.container = null
-    this.backgroundElement = null
+    this.wrap = new Wrap(content, {
+      wrap: (container) => {
+        const backgroundElement = document.createElement('div')
+        backgroundElement.className = 'background'
+        container.appendChild(backgroundElement)
+        return backgroundElement
+      }
+    })
   }
 
   mount (container) {
-    this.container = container
-    this.backgroundElement = document.createElement('div')
-    this.backgroundElement.className = 'background'
-
-    this.content.mount(this.backgroundElement)
-    container.appendChild(this.backgroundElement)
+    this.wrap.mount(container)
   }
 
   unmount () {
-    this.content.unmount()
-    this.container.removeChild(this.backgroundElement)
+    this.wrap.unmount()
   }
 }
