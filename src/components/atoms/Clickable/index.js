@@ -3,16 +3,22 @@ export class Clickable {
     this.content = content
     this.options = options
     this.container = null
+    this.wrapper = null
   }
 
   mount (container) {
     this.container = container
-    this.content.mount(container)
-    container.addEventListener('click', () => this.options.onClick(this.content))
+    this.wrapper = document.createElement('div')
+    this.wrapper.className = 'clickable'
+    this.content.mount(this.wrapper)
+
+    container.appendChild(this.wrapper)
+    this.wrapper.addEventListener('click', () => this.options.onClick(this.content))
   }
 
   unmount () {
+    this.wrapper.removeEventListener('click', () => this.options.onClick(this.content))
     this.content.unmount()
-    this.container.removeEventListener('click', () => this.options.onClick(this.content))
+    this.container.removeChild(this.wrapper)
   }
 }
