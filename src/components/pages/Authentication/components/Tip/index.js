@@ -2,18 +2,21 @@ import { Hoverable } from '../../../../atoms/Hoverable/index.js'
 import { Raw } from '../../../../atoms/Raw/index.js'
 import { ShowHide } from '../../../../common/ShowHide/index.js'
 import { Label } from '../Label/index.js'
+import { Wrap } from '../../../../atoms/Wrap/index.js'
 export class Tip {
   constructor (text) {
     this.text = text
-    //this.element = new Raw(`<div class="pages-tip"></div>`)
     this.element = document.createElement('div')
     this.element.className = 'pages-tip'
 
-
-    //this.textWrapper = new Raw('<div class="pages-tip-text-wrapper"></div>')
-
-    this.tipText = new Label(this.text)
-    this.tipText = new ShowHide(new Wrap)
+    this.tipText = new ShowHide(new Wrap(new Label(text), {
+      wrap: (container) => {
+        const textWrapper = document.createElement('div')
+        textWrapper.className = 'pages-tip-text-wrapper'
+        container.appendChild(textWrapper)
+        return textWrapper
+      }
+    }))
 
     this.content = new Hoverable(new Raw(
       `<svg width="30" height="30" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,13 +34,11 @@ export class Tip {
     ), {
       onEnter: () => {
         this.element.style.backgroundColor = '#ffffff'
-        this.textWrapper.mount(this.element)
-        const textWrapperDiv = document.getElementsByClassName('pages-tip-text-wrapper')[0]
-        this.tipText.mount(textWrapperDiv)
+        this.tipText.show()
       },
       onLeave: () => {
         this.element.style.backgroundColor = 'transparent'
-        this.textWrapper.unmount()
+        this.tipText.hide()
       }
     })
   }
@@ -45,12 +46,13 @@ export class Tip {
   mount (container) {
     container.appendChild(this.element)
     this.content.mount(this.element)
+    this.tipText.mount(this.element)
+    this.tipText.hide()
   }
 
   unmount () {
     this.content.unmount()
     this.tipText.unmount()
-    this.textWrapper.unmount()
     this.element.parentElement.removeChild(this.element)
   }
 }
