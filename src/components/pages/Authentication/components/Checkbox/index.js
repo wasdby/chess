@@ -6,9 +6,7 @@ export class Checkbox {
     this.element.checked = false
 
     this.onChanged = (value) => {
-      if (options.onChanged) {
-        options.onChanged(value)
-      }
+      options.onChanged?.(value)
     }
 
     this.element.addEventListener('change', (event) => {
