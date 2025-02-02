@@ -15,8 +15,6 @@ export class Clickable {
   unmount () {
     this.wrapper.removeEventListener('click', () => this.options.onClick(this.content))
     this.content.unmount()
-    if (this.wrapper.parentElement) {
-      this.wrapper.parentElement.removeChild(this.wrapper)
-    }
+    this.wrapper.parentElement.removeChild(this.wrapper)
   }
 }
