@@ -8,10 +8,10 @@ function handleButtonClick () {
   showBtn.show = !showBtn.show
   toggleVisibility(showBtn.show)
 }
-document.createElement('input')
+const inputField = document.createElement('input')
+root.appendChild(inputField)
 showBtn.mount(root)
 
-const inputField = root.querySelector('input')
 function toggleVisibility (value) {
   if (value) {
     inputField.type = 'password'
