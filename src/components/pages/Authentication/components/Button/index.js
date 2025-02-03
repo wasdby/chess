@@ -2,7 +2,7 @@ import { Raw } from '../../../../atoms/Raw/index.js'
 
 export class Button {
   constructor ({ text, color }) {
-    this.element = new Raw(`<button class='atoms_button_default atoms_button_${color}'>${text}</button>`)
+    this.element = new Raw(`<button class='atoms-button-default atoms-button-${color}'>${text}</button>`)
   }
 
   mount (container) {
