@@ -12,9 +12,7 @@ export class Input {
 
     this.element = document.createElement('input')
     this.element.className = 'pages-input'
-    this.element.addEventListener('input', (event) => {
-      this.onChanged(event.target.valuee)
-    })
+    this.element.onchange = (event) => this.onChanged(event.target.value)
     this.wrapper = document.createElement('div')
     this.wrapper.className = 'pages-input-wrapper'
     this.rightDecoratorWrapper = document.createElement('div')
