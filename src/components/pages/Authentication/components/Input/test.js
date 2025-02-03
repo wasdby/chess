@@ -1,6 +1,5 @@
 import { Input } from './index.js'
 import { Tip } from '../Tip/index.js'
-import { HideButton } from '../HideButton/index.js'
 import { Raw } from '../../../../atoms/Raw/index.js'
 import { TimerIcon } from '../TimerIcon/index.js'
 import { Timer } from '../Timer/index.js'
@@ -42,7 +41,6 @@ const component3 = new Input({
 component3.mount(document.getElementById('root'))
 const right = document.getElementById('right')
 
-new HideButton(() => {}).mount(right)
 new Tip('Подсказка').mount(right)
 
 component3.text = '123'
