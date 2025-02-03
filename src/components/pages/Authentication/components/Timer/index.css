@@ -1,0 +1,15 @@
+.pages-timer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  vertical-align:middle;
+}
+
+.pages-timer p {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #00000080;
+}

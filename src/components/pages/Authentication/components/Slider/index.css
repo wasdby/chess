@@ -1,0 +1,16 @@
+.pages-slider {
+  position: relative;
+}
+
+.pages-slider img {
+  width: 100%;
+}
+
+.pages-slider-progress {
+  position: absolute;
+  top: 41%;
+  left: 9%;
+  width: 82%;
+  height: 14%;
+  background: linear-gradient(to right, #FF1414, #00FF38);
+}
