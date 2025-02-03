@@ -1,0 +1,22 @@
+.pages-splashscreen {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  width: max-content;
+  width: 100%;
+}
+
+.pages-splashscreen-art {
+  /* position: absolute; */
+  z-index: -1;
+  width: 90%;
+  transform: translate(-10px);
+}
+
+.pages-splashscreen-logo {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 75%;
+
+}
