@@ -5,12 +5,13 @@
     right: 0;
     bottom: 0;
     z-index: -1;
+    outline: black solid 0.6rem;
     content: '';
     background-image: url('./media/back.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    filter: blur(10px);
+    filter: blur(0.3rem);
 }
 
 .background {
