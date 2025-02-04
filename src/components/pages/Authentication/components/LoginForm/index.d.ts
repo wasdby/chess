@@ -3,10 +3,9 @@ import { Component, Container } from "../../../../component";
  * Опции для формы авторизации
  */
 export interface LoginFormOptions {
-    onCheckboxChanged?: (checked: boolean) => void;
     onForgotPasswordClick?: () => void;
-    onAuthButtonClick?: () => Promise<void>;
-    onLoginButtonClick?: () => Promise<void>;
+    onRegButtonClick?: () => void;
+    onLoginButtonClick?: (checked: boolean) => void;
 }
 /**
  * Форма авторизации

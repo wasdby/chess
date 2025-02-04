@@ -7,7 +7,7 @@ import { Button } from '../Button/index.js'
 import { Clickable } from '../../../../atoms/Clickable/index.js'
 import { Wrap } from '../../../../atoms/Wrap/index.js'
 import { Composite } from '../../../../common/Composite/index.js'
-import { HideButton } from '../HideButton/index.js' // Импортируем HideButton
+import { HideButton } from '../HideButton/index.js'
 
 export class LoginForm extends Composite {
   constructor (options = {}) {
@@ -20,19 +20,20 @@ export class LoginForm extends Composite {
       rightDecorator: hideButton,
     })
     passwordInput.element.type = 'password'
+
+    let checkboxState = false
+
     super(
       new Wrap(
         new List(
           new Header('ВХОД'),
-          new Input({ placeholder: 'E-mail' }), // Поле для email
-          passwordInput, // Поле для пароля с HideButton
+          new Input({ placeholder: 'E-mail' }),
+          passwordInput,
           new Wrap(
             new List(
               new Checkbox({
                 onChanged: (checked) => {
-                  if (options.onCheckboxChanged) {
-                    options.onCheckboxChanged(checked)
-                  }
+                  checkboxState = checked
                 }
               }),
               new Label('Запомнить пароль'),
@@ -56,12 +57,12 @@ export class LoginForm extends Composite {
           ),
           new Clickable(
             new Button({
-              text: 'АВТОРИЗАЦИЯ',
+              text: 'РЕГИСТРАЦИЯ',
               color: 'red',
             }), {
               onClick: async () => {
-                if (options.onAuthButtonClick) {
-                  await options.onAuthButtonClick()
+                if (options.onRegButtonClick) {
+                  await options.onRegButtonClick()
                 }
               }
             }
@@ -73,7 +74,7 @@ export class LoginForm extends Composite {
             }), {
               onClick: async () => {
                 if (options.onLoginButtonClick) {
-                  await options.onLoginButtonClick()
+                  await options.onLoginButtonClick(checkboxState)
                 }
               }
             }
