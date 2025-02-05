@@ -3,18 +3,18 @@ import { LoginForm } from './index.js'
 
 const component = new Background(
   new LoginForm({
-    onForgotPasswordClick: () => {
+    onForgotPassword: () => {
       console.log('Forgot password clicked!')
     },
-    onRegButtonClick: async () => {
+    onSwitchToRegister: async () => {
       console.log('Reg button clicked!')
       await fetch('/api/auth', { method: 'POST' })
     },
-    onLoginButtonClick: async (checked) => {
-      console.log(`Login button clicked! Remember me: ${checked}`)
+    onLogin: async (loginData) => {
+      console.log('Login button clicked!', loginData)
       await fetch('/api/login', {
         method: 'POST',
-        body: JSON.stringify({ checked }),
+        body: JSON.stringify(loginData),
         headers: {
           'Content-Type': 'application/json'
         }

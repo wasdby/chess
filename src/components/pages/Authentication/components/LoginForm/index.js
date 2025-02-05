@@ -21,27 +21,30 @@ export class LoginForm extends Composite {
     })
     passwordInput.element.type = 'password'
 
+    const usernameInput = new Input({ placeholder: 'E-mail' })
+
     let checkboxState = false
+    const rememberMeCheckbox = new Checkbox({
+      onChanged: (checked) => {
+        checkboxState = checked
+      }
+    })
 
     super(
       new Wrap(
         new List(
           new Header('ВХОД'),
-          new Input({ placeholder: 'E-mail' }),
+          usernameInput,
           passwordInput,
           new Wrap(
             new List(
-              new Checkbox({
-                onChanged: (checked) => {
-                  checkboxState = checked
-                }
-              }),
+              rememberMeCheckbox,
               new Label('Запомнить пароль'),
               new Clickable(
                 new Label('Забыли пароль?'), {
                   onClick: () => {
-                    if (options.onForgotPasswordClick) {
-                      options.onForgotPasswordClick()
+                    if (options.onForgotPassword) {
+                      options.onForgotPassword()
                     }
                   }
                 }
@@ -61,8 +64,8 @@ export class LoginForm extends Composite {
               color: 'red',
             }), {
               onClick: async () => {
-                if (options.onRegButtonClick) {
-                  await options.onRegButtonClick()
+                if (options.onSwitchToRegister) {
+                  await options.onSwitchToRegister()
                 }
               }
             }
@@ -73,8 +76,13 @@ export class LoginForm extends Composite {
               color: 'green',
             }), {
               onClick: async () => {
-                if (options.onLoginButtonClick) {
-                  await options.onLoginButtonClick(checkboxState)
+                if (options.onLogin) {
+                  const loginData = {
+                    username: usernameInput.element.value,
+                    password: passwordInput.element.value,
+                    rememberMe: checkboxState,
+                  }
+                  await options.onLogin(loginData)
                 }
               }
             }
