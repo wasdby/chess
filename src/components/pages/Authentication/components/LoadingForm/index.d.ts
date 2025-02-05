@@ -1,12 +1,10 @@
-import { Component, Container } from "../../../../component";
-
-export interface LoadingOptions {
-  progress: number
-}
+import { Component, Container } from '../../../../component'
 
 export class LoadingForm implements Component {
-  constructor(options: LoadingOptions);
+  constructor ()
 
-  mount(container: Container): void;
-  unmount(): void;
+  set progress (value: number)
+  get progress (): number
+  mount (container: Container): void
+  unmount (): void
 }

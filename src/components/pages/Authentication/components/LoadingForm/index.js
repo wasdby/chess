@@ -6,10 +6,8 @@ import { Slider } from '../../../../pages/Authentication/components/Slider/index
 import { Label } from '../../../../pages/Authentication/components/Label/index.js'
 
 export class LoadingForm extends Composite {
-  constructor (options) {
+  constructor () {
     const slider = new Slider()
-    slider.progress = options.progress
-
     super(new Wrap(
       new List(
         new SplashScreen(),
@@ -24,5 +22,17 @@ export class LoadingForm extends Composite {
         }
       }
     ))
+
+    this._progress = 0
+    this._slider = slider
+  }
+
+  set progress (value) {
+    this._progress = value
+    this._slider.progress = this._progress
+  }
+
+  get progress () {
+    return this._progress
   }
 }
