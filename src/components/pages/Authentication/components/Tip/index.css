@@ -1,16 +1,16 @@
 .pages-tip-text-wrapper {
-  position : absolute;
-  top : -10px;
-  left : 60px;
-  width : 30vw;
+  position: absolute;
+  top: -10px;
+  left: 60px;
+  width: 30vw;
   margin: auto;
 }
 
 .pages-tip {
-  position : relative;
+  position: relative;
   display: inline-block;
-  width : 30px;
-  height : 30px;
-  padding : 2px;
-  border-radius : 2px;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  border-radius: 2px;
 }
