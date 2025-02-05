@@ -4,7 +4,8 @@
     "preinstall": "npx only-allow pnpm",
     "lint:stylelint": "stylelint '**/*.css'",
     "lint:eslint": "eslint",
-    "lint": "pnpm lint:eslint && pnpm lint:stylelint"
+    "lint:tsc": "tsc",
+    "lint": "pnpm lint:eslint && pnpm lint:stylelint && pnpm lint:tsc"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
