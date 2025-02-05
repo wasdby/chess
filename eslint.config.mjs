@@ -2,7 +2,7 @@ import neostandard from 'neostandard'
 import html from '@html-eslint/eslint-plugin'
 
 export default [
-  ...neostandard({}),
+  ...neostandard({ ts: true }),
   {
     ...html.configs['flat/recommended'],
     files: ['**/*.html'],
