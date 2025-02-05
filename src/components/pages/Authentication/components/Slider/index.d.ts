@@ -6,6 +6,13 @@ export class Slider implements Component {
   mount (container: Container): void
   unmount (): void
 
+  /**
+   * Доля прогресса. Дробное значение от 0 до 1
+   */
   set progress (value: number)
-  get percent (): number
+
+  /**
+   * Доля прогресса. Дробное значение от 0 до 1
+   */
+  get progress (): number
 }
