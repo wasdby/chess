@@ -1,18 +1,18 @@
-import { Component, Container } from "../../../../component"
+import { Component, Container } from '../../../../component'
 
 /**
  * Поле ввода для логина/почты/пароля/кода
  */
 export class Input implements Component {
-  constructor(
+  constructor (
     options: {
       placeholder: string,
       rightDecorator?: Component
       onChanged?: (text: string) => void
     }
   )
-  mount(container: Container): void
-  unmount(): void
-  get text(): string
-  set text(text: string)
+  mount (container: Container): void
+  unmount (): void
+  get text (): string
+  set text (text: string)
 }

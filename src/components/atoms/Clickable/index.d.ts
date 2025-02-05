@@ -1,4 +1,4 @@
-import { Component, Container } from "../../component"
+import { Component, Container } from '../../component'
 
 /**
  * Компонент для обработки кликов на элементы интерфейса
@@ -10,13 +10,12 @@ import { Component, Container } from "../../component"
  * )
  */
 export class Clickable<T extends Component> implements Component {
-  constructor(
+  constructor (
     content: T,
     options: {
       onClick: (container: T) => void
     }
   )
-  mount(container: Container): void
-  unmount(): void
+  mount (container: Container): void
+  unmount (): void
 }
-

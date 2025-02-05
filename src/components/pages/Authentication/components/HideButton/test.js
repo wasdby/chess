@@ -1,21 +1,12 @@
 import { HideButton } from './index.js'
 
 const root = document.getElementById('root')
+const inputField = document.querySelector('input')
 
 const showBtn = new HideButton(handleButtonClick)
+showBtn.mount(root)
 
 function handleButtonClick () {
   showBtn.show = !showBtn.show
-  toggleVisibility(showBtn.show)
-}
-const inputField = document.createElement('input')
-root.appendChild(inputField)
-showBtn.mount(root)
-
-function toggleVisibility (value) {
-  if (value) {
-    inputField.type = 'password'
-  } else {
-    inputField.type = 'text'
-  }
+  inputField.type = showBtn.show ? 'password' : 'text'
 }

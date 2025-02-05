@@ -33,3 +33,16 @@ jobs:
       - run: npm install --global pnpm
       - run: pnpm install
       - run: pnpm lint:stylelint
+  tsc:
+    name: tsc
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ./node_modules
+          key: node_modules-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: node_modules-
+      - run: npm install --global pnpm
+      - run: pnpm install
+      - run: pnpm lint:tsc

@@ -1,4 +1,4 @@
-import { Component, Container } from "../../component"
+import { Component, Container } from '../../component'
 
 /**
  * Компонент для отображения текста
@@ -7,8 +7,7 @@ import { Component, Container } from "../../component"
  * new Text('Hello World!')
  */
 export class Text implements Component {
-  constructor(text: string)
-  mount(container: Container): void
-  unmount(): void
+  constructor (text: string)
+  mount (container: Container): void
+  unmount (): void
 }
-

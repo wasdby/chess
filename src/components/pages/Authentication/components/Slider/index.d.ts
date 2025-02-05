@@ -1,11 +1,18 @@
-import { Component, Container } from "../../../../component";
+import { Component, Container } from '../../../../component'
 
 export class Slider implements Component {
-  constructor()
+  constructor ()
 
-  mount(container: Container): void;
-  unmount(): void;
+  mount (container: Container): void
+  unmount (): void
 
-  set progress(value: number)
-  get percent(): number
+  /**
+   * Доля прогресса. Дробное значение от 0 до 1
+   */
+  set progress (value: number)
+
+  /**
+   * Доля прогресса. Дробное значение от 0 до 1
+   */
+  get progress (): number
 }

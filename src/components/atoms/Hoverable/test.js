@@ -6,7 +6,7 @@ const root = document.getElementById('root')
 const hover = new Hoverable(
   new Text('HOVER ON ME'),
   {
-    onEnter: (text) => window.alert('123'),
+    onEnter: (text) => window.alert(`Text: ${text}`),
     onLeave: (text) => text.unmount()
   }
 )

@@ -1,4 +1,4 @@
-import { Component, Container } from "../../component"
+import { Component, Container } from '../../component'
 
 /**
  * Компонент для замены отрисовываемых компонентов
@@ -9,8 +9,8 @@ import { Component, Container } from "../../component"
  * pageSlot.replace(new GamePage())
  */
 export class Slot implements Component {
-  constructor(content: Component)
-  mount(container: Container): void
-  unmount(): void
-  replace(content: Component): void
+  constructor (content: Component)
+  mount (container: Container): void
+  unmount (): void
+  replace (content: Component): void
 }

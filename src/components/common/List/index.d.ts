@@ -1,4 +1,4 @@
-import { Component, Container } from "../../component"
+import { Component, Container } from '../../component'
 
 /**
  * Наполняет один и тот же контейнер списком компонентов по порядку
@@ -14,7 +14,7 @@ import { Component, Container } from "../../component"
  * )
  */
 export class List implements Component {
-  constructor(...components: Component[])
-  mount(container: Container): void;
-  unmount(): void;
+  constructor (...components: Component[])
+  mount (container: Container): void
+  unmount (): void
 }

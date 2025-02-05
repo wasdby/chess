@@ -1,4 +1,4 @@
-import { Component, Container } from "../../component"
+import { Component, Container } from '../../component'
 
 /**
  * Показывает или скрывает содержимое используя CSS
@@ -9,9 +9,9 @@ import { Component, Container } from "../../component"
  * helpBlock.hide() // otherwise
  */
 export class ShowHide implements Component {
-  constructor(content: Component)
-  mount(container: Container): void;
-  unmount(): void;
-  show(): void
-  hide(): void
+  constructor (content: Component)
+  mount (container: Container): void
+  unmount (): void
+  show (): void
+  hide (): void
 }
