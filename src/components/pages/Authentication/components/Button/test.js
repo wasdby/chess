@@ -6,7 +6,7 @@ const сomponent = new Clickable(new Button({
   color: 'red',
 }), {
   onClick: (content) => {
-    console.log('Button clicked!')
+    console.log('Button clicked!', content)
   }
 })
 

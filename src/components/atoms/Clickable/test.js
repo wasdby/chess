@@ -3,7 +3,7 @@ import { Clickable } from './index.js'
 
 const сomponent = new Clickable(new Text('Hello World!'), {
   onClick: (content) => {
-    console.log('Text clicked!')
+    console.log('Text clicked!', content)
   }
 })
 
