@@ -1,8 +1,8 @@
-import { Component, Container } from "../../../../component";
+import { Component, Container } from '../../../../component'
 
 export class TimerIcon implements Component {
-  constructor()
+  constructor ()
 
-  mount(container: Container): void;
-  unmount(): void;
+  mount (container: Container): void
+  unmount (): void
 }

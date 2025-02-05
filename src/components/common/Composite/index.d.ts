@@ -1,4 +1,4 @@
-import { Component, Container } from "../../component";
+import { Component, Container } from '../../component'
 
 /**
  * Базовый класс для компонентов состоящих исключительно из других компонентов
@@ -52,7 +52,7 @@ import { Component, Container } from "../../component";
  * }
  */
 export class Composite implements Component {
-  constructor(component: Component)
-  mount(container: Container): void
-  unmount(): void
+  constructor (component: Component)
+  mount (container: Container): void
+  unmount (): void
 }

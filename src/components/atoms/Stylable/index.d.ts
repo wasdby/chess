@@ -1,4 +1,4 @@
-import { Component, Container } from "../../component"
+import { Component, Container } from '../../component'
 
 /**
  * Компонент для динамического изменения CSS классов на элементе
@@ -9,9 +9,8 @@ import { Component, Container } from "../../component"
  * stylable.classList.remove('style2')
  */
 export class Stylable implements Component {
-  constructor(content: Component)
-  mount(container: Container): void
-  unmount(): void
-  get classList(): HTMLElement['classList']
+  constructor (content: Component)
+  mount (container: Container): void
+  unmount (): void
+  get classList (): HTMLElement['classList']
 }
-

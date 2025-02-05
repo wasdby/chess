@@ -1,4 +1,4 @@
-import { Component, Container } from "../../component"
+import { Component, Container } from '../../component'
 
 /**
  * Компонент для заворачивания контента в произвольный контейнер
@@ -17,13 +17,12 @@ import { Component, Container } from "../../component"
  * )
  */
 export class Wrap implements Component {
-  constructor(
+  constructor (
     content: Component,
     options: {
       wrap: (container: Container) => Container
     }
   )
-  mount(container: Container): void
-  unmount(): void
+  mount (container: Container): void
+  unmount (): void
 }
-

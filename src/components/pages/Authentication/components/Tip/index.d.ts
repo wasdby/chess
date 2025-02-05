@@ -1,10 +1,10 @@
-import { Component, Container } from "../../../../component";
+import { Component, Container } from '../../../../component'
 
 export class Tip implements Component {
-  constructor(
+  constructor (
     text: string
   )
 
-  mount(container: Container): void;
-  unmount(): void;
+  mount (container: Container): void
+  unmount (): void
 }

@@ -1,13 +1,13 @@
-import { Component, Container } from "../../../../component";
+import { Component, Container } from '../../../../component'
 
 export class Timer implements Component {
-  constructor(
+  constructor (
     timeout: number,
     options: {
       onTimeout: () => void
     }
   )
 
-  mount(container: Container): void;
-  unmount(): void;
+  mount (container: Container): void
+  unmount (): void
 }
