@@ -6,19 +6,11 @@ const component = new Background(
     onForgotPassword: () => {
       console.log('Forgot password clicked!')
     },
-    onSwitchToRegister: async () => {
+    onSwitchToRegister: () => {
       console.log('Reg button clicked!')
-      await fetch('/api/auth', { method: 'POST' })
     },
-    onLogin: async (loginData) => {
+    onLogin: (loginData) => {
       console.log('Login button clicked!', loginData)
-      await fetch('/api/login', {
-        method: 'POST',
-        body: JSON.stringify(loginData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
     }
   })
 )

@@ -13,7 +13,7 @@ export interface LoginData {
 export interface LoginFormOptions {
     onForgotPassword?: () => void;
     onSwitchToRegister?: () => void;
-    onLogin?: (checked: boolean) => void;
+    onLogin?: (loginData: LoginData) => void;
 }
 /**
  * Форма авторизации
