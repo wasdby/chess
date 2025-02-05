@@ -4,6 +4,8 @@
     "allowJs": true,
     "checkJs": true,
     "target": "es2015",
+    "strictNullChecks": false,
+    "exactOptionalPropertyTypes": false
   },
   "include": [
     "**/*.js",
