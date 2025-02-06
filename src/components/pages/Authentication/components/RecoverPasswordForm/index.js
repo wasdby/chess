@@ -12,7 +12,7 @@ export class RecoverPasswordForm extends Composite {
     let email = ''
     const emailInput = new Input({
       placeholder: 'E-mail',
-      onChanged: (text)=>{
+      onChanged: (text) => {
         email = text
       }
     })
@@ -21,7 +21,7 @@ export class RecoverPasswordForm extends Composite {
       text: 'Отправить',
       color: 'green',
     }), {
-      onClick: ()=>options.onSubmit({email})
+      onClick: () => options.onSubmit({ email })
     })
 
     super(new Wrap(
