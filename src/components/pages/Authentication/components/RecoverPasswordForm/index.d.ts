@@ -1,12 +1,12 @@
-import { Component, Container } from "../../../../component";
+import { Component, Container } from '../../../../component'
 
 export interface RecoverPasswordOptions {
-  onEmailInput: ()=>void,
+  onEmailInput: (text: string)=>void,
   onSendButtonClick: ()=>void
 }
 
 export class RecoverPasswordForm implements Component {
-  constructor(options?: RecoverPasswordOptions);
-  mount(container: Container): void;
-  unmount(): void;
+  constructor (options?: RecoverPasswordOptions)
+  mount (container: Container): void
+  unmount (): void
 }
