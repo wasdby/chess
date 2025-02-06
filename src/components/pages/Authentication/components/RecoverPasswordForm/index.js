@@ -9,16 +9,19 @@ import { Clickable } from '../../../../atoms/Clickable/index.js'
 
 export class RecoverPasswordForm extends Composite {
   constructor (options = {}) {
+    let email = ''
     const emailInput = new Input({
       placeholder: 'E-mail',
-      onChanged: options.onEmailInput
+      onChanged: (text)=>{
+        email = text
+      }
     })
 
     const sendButton = new Clickable(new Button({
       text: 'Отправить',
       color: 'green',
     }), {
-      onClick: options.onSendButtonClick
+      onClick: ()=>options.onSubmit({email})
     })
 
     super(new Wrap(

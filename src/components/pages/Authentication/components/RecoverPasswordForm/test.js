@@ -3,11 +3,8 @@ import { Background } from '../Background/index.js'
 
 new Background(
   new RecoverPasswordForm({
-    onEmailInput: (text) => {
-      console.log(text)
-    },
-    onSendButtonClick: () => {
-      console.log('button clicked')
+    onSubmit: (options) => {
+      console.log(`email: ${options.email}`)
     }
   })
 ).mount(document.getElementById('root'))

@@ -1,8 +1,11 @@
 import { Component, Container } from '../../../../component'
 
+type SubmitOptions = {
+  email: string
+}
+
 export interface RecoverPasswordOptions {
-  onEmailInput: (text: string)=>void,
-  onSendButtonClick: ()=>void
+  onSubmit: (submitOptions: SubmitOptions)=>void
 }
 
 export class RecoverPasswordForm implements Component {
