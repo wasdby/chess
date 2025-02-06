@@ -18,7 +18,7 @@ timer.mount(root)
 const reusableTimer = new Timer(60, {
   onTimeout: () => { }
 })
-async function remountTimer() {
+async function remountTimer () {
   while (true) {
     reusableTimer.mount(root)
     await new Promise(resolve => setTimeout(resolve, 5000))
@@ -26,4 +26,3 @@ async function remountTimer() {
   }
 }
 remountTimer()
-

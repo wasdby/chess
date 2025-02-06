@@ -1,5 +1,5 @@
 export class Timer {
-  constructor(timeout, options) {
+  constructor (timeout, options) {
     this.timeout = timeout
     this.onTimeout = options.onTimeout
 
@@ -7,7 +7,7 @@ export class Timer {
     this.element.className = 'pages-timer'
   }
 
-  mount(container) {
+  mount (container) {
     container.appendChild(this.element)
 
     const renderTime = (time) => {
@@ -30,7 +30,7 @@ export class Timer {
     daemon()
   }
 
-  unmount() {
+  unmount () {
     this.abortDaemon?.()
     this.element.parentElement.removeChild(this.element)
   }
