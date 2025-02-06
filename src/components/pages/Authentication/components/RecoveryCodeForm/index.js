@@ -45,17 +45,26 @@ export class RecoveryCodeForm extends Composite {
       onClick: () => options.onSubmit({ code })
     })
 
-    const minutes = Math.floor(options.timeout / 60)
-    const seconds = options.timeout - (minutes * 60)
-    const timerLabel = `${minutes}:${seconds > 9 ? seconds : '0' + seconds}`
-
     super(new Wrap(
       new List(
         new Header('ВОССТАНОВЛЕНИЕ ПАРОЛЯ'),
         emailInput,
         new Label('На указанную вами почту отправлено сообщение с кодом подтверждения.'),
         codeInput,
-        new Label(`Отправить код повторно можно через ${timerLabel} сек.`),
+        new Wrap(new List(
+          new Label('Отправить код повторно можно через'),
+          new Timer(options.timeout, {
+            onTimeout: () => {}
+          }),
+          new Label('сек.')
+        ), {
+          wrap: (container) => {
+            const label = document.createElement('div')
+            label.className = 'pages-label'
+            container.appendChild(label)
+            return label
+          }
+        }),
         new Wrap(new List(
           cancelButton,
           submitButton
