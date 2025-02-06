@@ -13,5 +13,17 @@ new Timer(1000, {
 const timer = new Timer(8, {
   onTimeout: () => timer.unmount()
 })
-
 timer.mount(root)
+
+const reusableTimer = new Timer(60, {
+  onTimeout: () => { }
+})
+async function remountTimer() {
+  while (true) {
+    reusableTimer.mount(root)
+    await new Promise(resolve => setTimeout(resolve, 5000))
+    reusableTimer.unmount()
+  }
+}
+remountTimer()
+
