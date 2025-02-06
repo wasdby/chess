@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-.pages-new-password-form .pages-new-password-form-buttons{
+.pages-new-password-form .pages-new-password-form-buttons {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

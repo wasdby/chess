@@ -8,14 +8,20 @@ import { Clickable } from '../../../../atoms/Clickable/index.js'
 
 export class NewPasswordForm extends Composite {
   constructor (options = {}) {
+    let password = ''
+    let repeatedPassword = ''
     const passwordInput = new Input({
       placeholder: 'Введите пароль',
-      onChanged: options.onPasswordInput
+      onChanged: (text) => {
+        password = text
+      }
     })
 
     const passwordRepeatInput = new Input({
       placeholder: 'Повторите пароль',
-      onChanged: options.onPasswordRepeat
+      onChanged: (text) => {
+        repeatedPassword = text
+      }
     })
 
     const cancelButton = new Clickable(new Button({
@@ -29,7 +35,7 @@ export class NewPasswordForm extends Composite {
       text: 'ПОДТВЕРДИТЬ',
       color: 'green',
     }), {
-      onClick: options.onSubmit
+      onClick: () => options.onSubmit({ password, repeatedPassword })
     })
 
     super(new Wrap(

@@ -3,14 +3,8 @@ import { Background } from '../Background/index.js'
 
 new Background(
   new NewPasswordForm({
-    onPasswordInput: (text) => {
-      console.log(text)
-    },
-    onPasswordRepeat: (text) => {
-      console.log(text)
-    },
-    onSubmit: () => {
-      console.log('submit clicked')
+    onSubmit: (options) => {
+      console.log(options.password, options.repeatedPassword)
     },
     onCancel: () => {
       console.log('cancel clicked')

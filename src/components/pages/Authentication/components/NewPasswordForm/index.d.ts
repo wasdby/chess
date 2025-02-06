@@ -1,15 +1,18 @@
-import { Component, Container } from "../../../../component";
+import { Component, Container } from '../../../../component'
+
+type SubmitOptions = {
+  password: string,
+  repeatedPassword: string
+}
 
 export interface NewPasswordOptions {
-  onPasswordInput: ()=>void,
-  onPasswordRepeat: ()=>void,
   onCancel: ()=>void,
-  onSubmit: ()=>void,
+  onSubmit: (submitOptions: SubmitOptions)=>void,
 }
 
 export class NewPasswordForm implements Component {
-  constructor(options?: NewPasswordOptions);
+  constructor (options?: NewPasswordOptions)
 
-  mount(container: Container): void;
-  unmount(): void;
+  mount (container: Container): void
+  unmount (): void
 }
