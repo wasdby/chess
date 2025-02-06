@@ -5,11 +5,8 @@ new Background(
   new RecoveryCodeForm({
     email: 'test@mail.com',
     timeout: 2,
-    onCodeInput: (text) => {
-      console.log(text)
-    },
-    onSubmit: () => {
-      console.log('button clicked')
+    onSubmit: (options) => {
+      console.log(`code: ${options.code}`)
     },
     onCancel: () => {
       console.log('button clicked')

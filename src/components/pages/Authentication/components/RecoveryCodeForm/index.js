@@ -17,6 +17,7 @@ export class RecoveryCodeForm extends Composite {
     }))
     emailInput.classList.add('inactive')
 
+    let code = ''
     const codeInput = new Input({
       placeholder: 'Введите код',
       rightDecorator: new List(
@@ -25,7 +26,9 @@ export class RecoveryCodeForm extends Composite {
           onTimeout: options.onTimeout
         })
       ),
-      onChanged: options.onCodeInput
+      onChanged: (text) => {
+        code = text
+      }
     })
 
     const cancelButton = new Clickable(new Button({
@@ -39,7 +42,7 @@ export class RecoveryCodeForm extends Composite {
       text: 'ПОДТВЕРДИТЬ',
       color: 'green',
     }), {
-      onClick: options.onSubmit
+      onClick: () => options.onSubmit({ code })
     })
 
     const minutes = Math.floor(options.timeout / 60)

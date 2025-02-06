@@ -15,7 +15,7 @@
 }
 
 .pages-recovery-code-form .inactive .pages-input-wrapper input {
-  pointer-events:none;
+  pointer-events: none;
 }
 
 .pages-recovery-code-form .inactive .pages-input-wrapper {
@@ -38,7 +38,7 @@
   text-align: center;
 }
 
-.pages-recovery-code-form .pages-recovery-code-form-buttons{
+.pages-recovery-code-form .pages-recovery-code-form-buttons {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
