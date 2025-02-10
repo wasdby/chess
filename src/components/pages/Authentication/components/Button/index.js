@@ -8,7 +8,7 @@ export class Button {
 
   mount (container) {
     this.element.mount(container)
-    this.element.element.addEventListener('click', this.onClick)
+    this.element.element.addEventListener('click', () => { this.onClick(this) })
   }
 
   unmount () {
