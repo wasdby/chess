@@ -22,18 +22,8 @@
 .login-form-pass-opt {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: right;
   margin-top: -1.5rem;
-}
-
-.login-form-pass-opt .checkbox {
-  width: 1rem;
-  height: 1rem;
-}
-
-.login-form-pass-opt .checkbox:checked::after {
-  width: 0.7rem;
-  height: 0.7rem;
 }
 
 .login-form-pass-opt .pages-label {
@@ -41,7 +31,8 @@
 }
 
 .login-form-pass-opt .clickable .pages-label {
-  width: 16rem;
+  width: 6rem;
+  margin-right: 0.5rem;
   color: darkorange;
   text-align: right;
   cursor: pointer;
