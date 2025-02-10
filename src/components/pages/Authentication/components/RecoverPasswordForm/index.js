@@ -5,7 +5,6 @@ import { Wrap } from '../../../../atoms/Wrap/index.js'
 import { List } from '../../../../common/List/index.js'
 import { Header } from '../../../../pages/Authentication/components/Header/index.js'
 import { Label } from '../../../../pages/Authentication/components/Label/index.js'
-import { Clickable } from '../../../../atoms/Clickable/index.js'
 
 export class RecoverPasswordForm extends Composite {
   constructor (options = {}) {

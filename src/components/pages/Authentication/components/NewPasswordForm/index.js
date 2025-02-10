@@ -4,7 +4,6 @@ import { Button } from '../Button/index.js'
 import { Wrap } from '../../../../atoms/Wrap/index.js'
 import { List } from '../../../../common/List/index.js'
 import { Header } from '../Header/index.js'
-import { Clickable } from '../../../../atoms/Clickable/index.js'
 
 export class NewPasswordForm extends Composite {
   constructor (options = {}) {
