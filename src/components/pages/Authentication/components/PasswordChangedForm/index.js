@@ -10,10 +10,9 @@ export class PasswordChangedForm extends Composite {
     super(new Wrap(
       new List(
         new Header('ПАРОЛЬ УСПЕШНО ИЗМЕНЕН'),
-        new Clickable(new Button({
+        new Button({
           text: 'ВХОД',
           color: 'green',
-        }), {
           onClick: options.onLogin
         })
       ), {

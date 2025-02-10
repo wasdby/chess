@@ -17,10 +17,9 @@ export class RecoverPasswordForm extends Composite {
       }
     })
 
-    const sendButton = new Clickable(new Button({
+    const sendButton = new Button({
       text: 'Отправить',
       color: 'green',
-    }), {
       onClick: () => options.onSubmit({ email })
     })
 

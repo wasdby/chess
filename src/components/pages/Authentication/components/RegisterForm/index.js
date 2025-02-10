@@ -221,36 +221,32 @@ export class RegisterForm extends Composite {
               },
             }
           ),
-          new Clickable(
-            new Button({
-              text: 'СОЗДАТЬ АККАУНТ',
-              color: 'red',
-            }),
-            {
-              onClick: async () => {
-                if (usernameValid && emailValid && passwordValid && repeatPasswordValid && agreementCheckboxState) {
-                  if (options.onRegister) {
-                    const registerData = {
-                      username: usernameInput.element.value,
-                      email: emailInput.element.value,
-                      password: passwordInput.element.value,
-                      sendNews: newsCheckboxState,
-                    }
-                    await options.onRegister(registerData)
-                    errorMessage = ''
+          new Button({
+            text: 'СОЗДАТЬ АККАУНТ',
+            color: 'red',
+            onClick: async () => {
+              if (usernameValid && emailValid && passwordValid && repeatPasswordValid && agreementCheckboxState) {
+                if (options.onRegister) {
+                  const registerData = {
+                    username: usernameInput.element.value,
+                    email: emailInput.element.value,
+                    password: passwordInput.element.value,
+                    sendNews: newsCheckboxState,
                   }
-                } else {
-                  if (!usernameValid && !emailValid && !passwordValid && !repeatPasswordValid && !agreementCheckboxState) {
-                    errorMessage = 'Заполните корректно все поля.'
-                  }
-                  if (usernameValid && emailValid && passwordValid && repeatPasswordValid && !agreementCheckboxState) {
-                    errorMessage = 'Вы должны принять условия пользовательского соглашения.'
-                  }
-                  errorLabel.element.textContent = errorMessage
+                  await options.onRegister(registerData)
+                  errorMessage = ''
                 }
-              },
+              } else {
+                if (!usernameValid && !emailValid && !passwordValid && !repeatPasswordValid && !agreementCheckboxState) {
+                  errorMessage = 'Заполните корректно все поля.'
+                }
+                if (usernameValid && emailValid && passwordValid && repeatPasswordValid && !agreementCheckboxState) {
+                  errorMessage = 'Вы должны принять условия пользовательского соглашения.'
+                }
+                errorLabel.element.textContent = errorMessage
+              }
             }
-          ),
+          }),
           errorLabel,
           new Wrap(
             new List(

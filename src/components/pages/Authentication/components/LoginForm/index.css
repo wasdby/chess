@@ -38,6 +38,6 @@
   cursor: pointer;
 }
 
-.login-form .clickable {
+.login-form .atoms-button-default {
   align-self: center;
 }

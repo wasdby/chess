@@ -48,34 +48,29 @@ export class LoginForm extends Composite {
               }
             }
           ),
-          new Clickable(
-            new Button({
-              text: 'РЕГИСТРАЦИЯ',
-              color: 'red',
-            }), {
-              onClick: async () => {
-                if (options.onSwitchToRegister) {
-                  await options.onSwitchToRegister()
-                }
+
+          new Button({
+            text: 'РЕГИСТРАЦИЯ',
+            color: 'red',
+            onClick: async () => {
+              if (options.onSwitchToRegister) {
+                await options.onSwitchToRegister()
               }
             }
-          ),
-          new Clickable(
-            new Button({
-              text: 'ВХОД',
-              color: 'green',
-            }), {
-              onClick: async () => {
-                if (options.onLogin) {
-                  const loginData = {
-                    username: usernameInput.element.value,
-                    password: passwordInput.element.value
-                  }
-                  await options.onLogin(loginData)
+          }),
+          new Button({
+            text: 'ВХОД',
+            color: 'green',
+            onClick: async () => {
+              if (options.onLogin) {
+                const loginData = {
+                  username: usernameInput.element.value,
+                  password: passwordInput.element.value
                 }
+                await options.onLogin(loginData)
               }
             }
-          )
+          })
         ), {
           wrap: (container) => {
             const formElement = document.createElement('div')

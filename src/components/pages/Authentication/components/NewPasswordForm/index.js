@@ -24,17 +24,15 @@ export class NewPasswordForm extends Composite {
       }
     })
 
-    const cancelButton = new Clickable(new Button({
+    const cancelButton = new Button({
       text: 'ОТМЕНА',
       color: 'red',
-    }), {
       onClick: options.onCancel
     })
 
-    const submitButton = new Clickable(new Button({
+    const submitButton = new Button({
       text: 'ПОДТВЕРДИТЬ',
       color: 'green',
-    }), {
       onClick: () => options.onSubmit({ password, repeatedPassword })
     })
 
