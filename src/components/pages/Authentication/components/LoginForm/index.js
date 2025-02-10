@@ -1,7 +1,6 @@
 import { List } from '../../../../common/List/index.js'
 import { Header } from '../Header/index.js'
 import { Input } from '../Input/index.js'
-import { Checkbox } from '../Checkbox/index.js'
 import { Label } from '../Label/index.js'
 import { Button } from '../Button/index.js'
 import { Clickable } from '../../../../atoms/Clickable/index.js'
@@ -23,13 +22,6 @@ export class LoginForm extends Composite {
 
     const usernameInput = new Input({ placeholder: 'E-mail' })
 
-    let checkboxState = false
-    const rememberMeCheckbox = new Checkbox({
-      onChanged: (checked) => {
-        checkboxState = checked
-      }
-    })
-
     super(
       new Wrap(
         new List(
@@ -38,8 +30,6 @@ export class LoginForm extends Composite {
           passwordInput,
           new Wrap(
             new List(
-              rememberMeCheckbox,
-              new Label('Запомнить пароль'),
               new Clickable(
                 new Label('Забыли пароль?'), {
                   onClick: () => {
@@ -79,8 +69,7 @@ export class LoginForm extends Composite {
                 if (options.onLogin) {
                   const loginData = {
                     username: usernameInput.element.value,
-                    password: passwordInput.element.value,
-                    rememberMe: checkboxState,
+                    password: passwordInput.element.value
                   }
                   await options.onLogin(loginData)
                 }

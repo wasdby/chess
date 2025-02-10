@@ -5,7 +5,6 @@ import { Component, Container } from '../../../../component'
 export interface LoginData {
   username: string;
   password: string;
-  rememberMe: boolean;
 }
 /**
  * Опции для формы авторизации
