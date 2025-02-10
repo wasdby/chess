@@ -4,11 +4,9 @@ export class Clickable {
     this.options = options
     this.wrapper = document.createElement('div')
     this.wrapper.className = 'clickable'
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick () {
-    this.options.onClick(this.content)
+    this.handleClick = () => {
+      this.options.onClick(this.content)
+    }
   }
 
   mount (container) {
