@@ -1,10 +1,11 @@
 import { Clickable } from '../../../../atoms/Clickable/index.js'
 import { Wrap } from '../../../../atoms/Wrap/index.js'
+import { Composite } from '../../../../common/Composite/index.js'
 import { DiceIcon } from '../DiceIcon/index.js'
 
-export class RandomButton {
+export class RandomButton extends Composite {
   constructor (onClick) {
-    this.element = new Wrap(new Clickable(new DiceIcon(), {
+    super(new Wrap(new Clickable(new DiceIcon(), {
       onClick
     }), {
       wrap: (container) => {
@@ -14,13 +15,6 @@ export class RandomButton {
         return newContainer
       }
     })
-  }
-
-  mount (container) {
-    this.element.mount(container)
-  }
-
-  unmount () {
-    this.element.unmount()
+    )
   }
 }
